@@ -1,0 +1,11 @@
+Model Information:
+* title:	Funny Rubber Chicken
+* source:	https://sketchfab.com/3d-models/funny-rubber-chicken-ecaa22bd52ee46b1bc56c8b366391b58
+* author:	Vyacheslav (https://sketchfab.com/borovikmotion)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Funny Rubber Chicken" (https://sketchfab.com/3d-models/funny-rubber-chicken-ecaa22bd52ee46b1bc56c8b366391b58) by Vyacheslav (https://sketchfab.com/borovikmotion) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

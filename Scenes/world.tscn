@@ -19,6 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.726647, -0.512797, 0.457191, 0, 0.665478, 0.746418, -0.687011, -0.542382, 0.483567, 0, 39.4589, 0)
 light_energy = 1.821
+shadow_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

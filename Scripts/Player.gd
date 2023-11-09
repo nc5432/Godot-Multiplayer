@@ -25,6 +25,7 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 func _unhandled_input(event):
+	if not is_multiplayer_authority(): return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * lookSensitivity)
 		camera.rotate_x(-event.relative.y * lookSensitivity)

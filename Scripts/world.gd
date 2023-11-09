@@ -6,7 +6,7 @@ extends Node
 @onready var healthbar = $CanvasLayer/HUD/HealthBar
 
 const Player = preload("res://Prefabs/player.tscn")
-const PORT = 2571
+const PORT = 25565
 var enet_peer = ENetMultiplayerPeer.new()
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
@@ -24,7 +24,7 @@ func _on_host_button_pressed():
 	multiplayer.peer_connected.connect(addPlayer)
 	multiplayer.peer_disconnected.connect(removePlayer)
 	addPlayer(multiplayer.get_unique_id())
-	upnpSetup()
+	#upnpSetup()
 
 func _on_join_button_pressed():
 	mainMenu.hide()

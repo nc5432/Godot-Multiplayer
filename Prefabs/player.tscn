@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4lc7asimanmh"]
+[gd_scene load_steps=18 format=3 uid="uid://b4lc7asimanmh"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_iv0wx"]
 [ext_resource type="PackedScene" uid="uid://da1qh4xri24f2" path="res://Models/kimber_1911/scene.gltf" id="2_0x8c2"]
+[ext_resource type="PackedScene" uid="uid://dbdwccvwm0mw1" path="res://Models/funny_rubber_chicken/scene.gltf" id="2_3kray"]
 [ext_resource type="Texture2D" uid="uid://bx0esoasfh733" path="res://addons/kenney_particle_pack/star_06.png" id="3_cnxpw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xpbim"]
@@ -161,19 +162,23 @@ properties/2/sync = true
 properties/2/watch = false
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
+collision_layer = 3
 script = ExtResource("1_iv0wx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_xpbim")
+
+[node name="Chicken" parent="." instance=ExtResource("2_3kray")]
+transform = Transform3D(-0.005, 0, -4.37114e-10, 0, 0.003, 0, 4.37114e-10, 0, -0.005, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ruebo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46831, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105975, 1.46831, -0.0756454)
 
 [node name="gun" parent="Camera3D" instance=ExtResource("2_0x8c2")]
 transform = Transform3D(-0.3, -3.72707e-07, 6.5866e-07, 6.55671e-09, 0.259808, 0.15, -7.56769e-07, 0.15, -0.259808, 0.40064, -0.313696, -0.50908)
@@ -189,6 +194,7 @@ process_material = SubResource("ParticleProcessMaterial_qufyg")
 draw_pass_1 = SubResource("PlaneMesh_yxv4l")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.537428)
 target_position = Vector3(0, 0, -50)
 collision_mask = 2
 
