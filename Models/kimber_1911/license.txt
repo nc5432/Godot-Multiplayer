@@ -1,0 +1,11 @@
+Model Information:
+* title:	Kimber 1911
+* source:	https://sketchfab.com/3d-models/kimber-1911-12b70050f764456fb4db69a37a96c505
+* author:	m.daneshyab (https://sketchfab.com/m.daneshyab)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Kimber 1911" (https://sketchfab.com/3d-models/kimber-1911-12b70050f764456fb4db69a37a96c505) by m.daneshyab (https://sketchfab.com/m.daneshyab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
