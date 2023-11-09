@@ -9,6 +9,7 @@ const JUMP_VELOCITY: float = 10
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var flash = $Camera3D/gun/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
+@onready var chickenModel = $chicken
 
 @export var lookSensitivity: float = 0.005
 @export var health: float = 3
@@ -20,6 +21,7 @@ func _ready():
 	if not is_multiplayer_authority(): return
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
+	chickenModel.hideMesh()
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())

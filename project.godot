@@ -22,6 +22,7 @@ project/assembly_name="Godot Multiplayer"
 [filesystem]
 
 import/blender/enabled=false
+import/fbx/enabled=false
 
 [input]
 

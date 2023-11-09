@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d164amgdtaa5k"]
+
+[ext_resource type="PackedScene" uid="uid://dbdwccvwm0mw1" path="res://Models/funny_rubber_chicken/scene.gltf" id="1_yfcfs"]
+[ext_resource type="Script" path="res://Scripts/chicken.gd" id="2_iaunv"]
+
+[node name="chicken" instance=ExtResource("1_yfcfs")]
+script = ExtResource("2_iaunv")

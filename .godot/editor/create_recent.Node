@@ -1,3 +1,4 @@
+MeshInstance3D
 ProgressBar
 TextureRect
 Control
@@ -12,7 +13,6 @@ MarginContainer
 PanelContainer
 CanvasLayer
 GPUParticles3D
-MeshInstance3D
 AnimationPlayer
 DirectionalLight3D
 DirectionalLight2D
