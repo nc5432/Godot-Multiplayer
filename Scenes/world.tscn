@@ -27,10 +27,10 @@ shadow_enabled = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 337.0
-offset_top = 239.0
-offset_right = -337.0
-offset_bottom = -239.0
+offset_left = 314.0
+offset_top = 200.0
+offset_right = -314.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -152,6 +152,30 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Host"
 
+[node name="Username" type="LineEdit" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Enter Username"
+max_length = 21
+
+[node name="Button" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 136.0
+offset_right = 43.0
+offset_bottom = 167.0
+grow_vertical = 0
+text = "Quit"
+
 [node name="HUD" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -201,4 +225,5 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/Back" to="." method="_on_back_pressed_2"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Button" to="." method="_on_button_pressed"]
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]

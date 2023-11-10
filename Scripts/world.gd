@@ -5,6 +5,7 @@ extends Node
 @onready var hostMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting
 @onready var joinMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining
 @onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/AddressEntry
+@onready var username = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username
 @onready var hud = $CanvasLayer/HUD
 @onready var healthbar = $CanvasLayer/HUD/HealthBar
 @onready var upnpEnabled = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/upnpCheck
@@ -54,6 +55,7 @@ func _on_join_button_pressed():
 	
 	enet_peer.create_client(addressEntry.text, PORT)
 	multiplayer.multiplayer_peer = enet_peer
+	
 
 func addPlayer(peer_id):
 	var player = Player.instantiate()
@@ -84,4 +86,5 @@ func upnpSetup():
 	assert(mapResult == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % mapResult)
 	print("Success! Join Address: %s" % upnp.query_external_address())
 
-
+func _on_button_pressed():
+	get_tree().quit()

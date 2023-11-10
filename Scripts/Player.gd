@@ -10,7 +10,9 @@ const JUMP_VELOCITY: float = 10
 @onready var flash = $Camera3D/gun/MuzzleFlash
 @onready var raycast = $Camera3D/RayCast3D
 @onready var chickenModel = $chicken
+@onready var nametag = $Username
 
+@export var username: String = "Chicken"
 @export var lookSensitivity: float = 0.005
 @export var health: float = 3
 
@@ -22,6 +24,12 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
 	chickenModel.hideMesh()
+	set_collision_layer_value(2, false)
+	username = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username:LineEdit").text
+	updateUsername()
+
+func updateUsername():
+	nametag.text = username
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())

@@ -1,4 +1,8 @@
+Label3D
+RichTextLabel
 Button
+LineEdit
+TextEdit
 Control
 CheckBox
 MeshInstance3D
@@ -7,7 +11,6 @@ TextureRect
 RayCast3D
 MultiplayerSynchronizer
 MultiplayerSpawner
-LineEdit
 Label
 VBoxContainer
 MarginContainer
