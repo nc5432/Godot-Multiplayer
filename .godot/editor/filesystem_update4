@@ -1,5 +1,3 @@
-res://Prefabs/player.tscn
-res://Scripts/Player.gd
 res://Scenes/world.tscn
+res://Prefabs/player.tscn
 res://Models/funny_rubber_chicken/chicken.tscn
-res://Scripts/world.gd

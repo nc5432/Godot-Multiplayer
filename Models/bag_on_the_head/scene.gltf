@@ -1,0 +1,278 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.8174989819526672,
+        0.9999989867210388,
+        0.8122829794883728
+      ],
+      "min": [
+        -0.8174989819526672,
+        -1.0,
+        -0.8122829794883728
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11040,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.998532235622406,
+        0.9955539107322693,
+        0.9962959289550781
+      ],
+      "min": [
+        -0.9989697933197021,
+        -0.9619061946868896,
+        -0.998091995716095
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.9985616207122803,
+        0.8858723640441895,
+        0.9997183084487915,
+        1.0
+      ],
+      "min": [
+        -0.999197244644165,
+        -0.9114717245101929,
+        -0.9882073998451233,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 920,
+      "max": [
+        0.9994999766349792,
+        0.9940000176429749
+      ],
+      "min": [
+        0.0005000000237487257,
+        0.0005000000237487257
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 4821,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "shedmon (https://sketchfab.com/shedmon)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/bag-on-the-head-a6dbfbaa4e5e4add8baa308c4459859d",
+      "title": "Bag on the head"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 19284,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7360,
+      "byteOffset": 19284,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22080,
+      "byteOffset": 26644,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14720,
+      "byteOffset": 48724,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 63444,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_clearcoat"
+  ],
+  "images": [
+    {
+      "uri": "textures/Default_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Default_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Default_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 1.0,
+          "clearcoatNormalTexture": {
+            "index": 2
+          },
+          "clearcoatRoughnessFactor": 1.0,
+          "clearcoatRoughnessTexture": {
+            "index": 1
+          }
+        }
+      },
+      "name": "Default",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "defaultMaterial",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.1622506082057953,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.602687219790186e-17,
+        -0.1622506082057953,
+        0.0,
+        0.0,
+        0.1622506082057953,
+        3.602687219790186e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -4.371139006309477e-08,
+        0.999999999999999,
+        0.0,
+        0.0,
+        -0.999999999999999,
+        -4.371139006309477e-08,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Collada visual scene group"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "g"
+    },
+    {
+      "mesh": 0,
+      "name": "defaultMaterial"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

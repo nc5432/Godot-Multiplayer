@@ -1,0 +1,254 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 629,
+      "max": [
+        14.138799667358398,
+        12.536100387573242,
+        9.567500114440918
+      ],
+      "min": [
+        -14.138799667358398,
+        -12.536100387573242,
+        -9.567500114440918
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7548,
+      "componentType": 5126,
+      "count": 629,
+      "max": [
+        0.9945858716964722,
+        0.9992214441299438,
+        0.9902768731117249
+      ],
+      "min": [
+        -0.9909496903419495,
+        -0.9950770139694214,
+        -0.9988207221031189
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 629,
+      "max": [
+        0.9999546408653259,
+        0.9910286664962769,
+        0.8365668654441833,
+        1.0
+      ],
+      "min": [
+        -0.9999892115592957,
+        -0.9981811046600342,
+        -0.9311501979827881,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 629,
+      "max": [
+        0.9955999851226807,
+        0.9957000017166138
+      ],
+      "min": [
+        0.009399999864399433,
+        0.004800000227987766
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3264,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "shedmon (https://sketchfab.com/shedmon)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/christmas-hat-b44d66b16ba543c9825af6f95bd3d678",
+      "title": "Christmas Hat"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 13056,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5032,
+      "byteOffset": 13056,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15096,
+      "byteOffset": 18088,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 10064,
+      "byteOffset": 33184,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 43248,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_clearcoat"
+  ],
+  "images": [
+    {
+      "uri": "textures/material_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/material_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/material_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_clearcoat": {
+          "clearcoatFactor": 0.7273246951,
+          "clearcoatNormalTexture": {
+            "index": 2
+          },
+          "clearcoatRoughnessFactor": 1.0,
+          "clearcoatRoughnessTexture": {
+            "index": 1
+          }
+        }
+      },
+      "name": "material",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.010436785276503657,
+        -2.757180114053599e-19,
+        0.001241723533424513,
+        0.0,
+        0.001154567545449764,
+        0.003868231050148998,
+        -0.009704232753566688,
+        0.0,
+        -0.000457002257166432,
+        0.00977267378517549,
+        0.0038411403696816692,
+        0.0,
+        9.899999930951253e-09,
+        1.2999999965402243e-09,
+        -2.0049999704951915e-07,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "Hat_low.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

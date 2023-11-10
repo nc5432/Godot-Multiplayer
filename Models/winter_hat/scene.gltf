@@ -1,0 +1,264 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 619,
+      "max": [
+        0.2083280086517334,
+        0.21468600630760193,
+        0.18332600593566895
+      ],
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 7428,
+      "componentType": 5126,
+      "count": 619,
+      "max": [
+        0.9958018660545349,
+        0.9994702339172363,
+        0.9994736313819885
+      ],
+      "min": [
+        -0.9955283403396606,
+        -0.9999940991401672,
+        -0.9007242321968079
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 619,
+      "max": [
+        0.999991774559021,
+        0.9896164536476135,
+        0.7739830613136292,
+        1.0
+      ],
+      "min": [
+        -0.998728334903717,
+        -0.9959864616394043,
+        -0.7902970314025879,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 619,
+      "max": [
+        0.9930750131607056,
+        0.4060809910297394
+      ],
+      "min": [
+        0.0061690001748502254,
+        0.007275999989360571
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3384,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "StubbornFunkyDonkey (https://sketchfab.com/stubbornfunkydonkey)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/winter-hat-637a36cb74204c719883af7feb4b7c28",
+      "title": "Winter Hat"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 13536,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4952,
+      "byteOffset": 13536,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 14856,
+      "byteOffset": 18488,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9904,
+      "byteOffset": 33344,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 43248,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Hat02_LoPolyinitialShadingGroup_baseColor.png"
+    },
+    {
+      "uri": "textures/Hat02_LoPolyinitialShadingGroup_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Hat02_LoPolyinitialShadingGroup_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Hat02_LoPolyinitialShadingGroup",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        9.82659912109375,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.1819433195999216e-15,
+        -9.82659912109375,
+        0.0,
+        0.0,
+        9.82659912109375,
+        2.1819433195999216e-15,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -0.10416000336408615,
+        -0.12922300398349762,
+        1.636330008506775,
+        1.0
+      ],
+      "name": "Hat_Final_LoPoly.OBJ.cleaner.gles"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "Object_2"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_3"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

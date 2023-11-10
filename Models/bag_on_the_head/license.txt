@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bag on the head
+* source:	https://sketchfab.com/3d-models/bag-on-the-head-a6dbfbaa4e5e4add8baa308c4459859d
+* author:	shedmon (https://sketchfab.com/shedmon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bag on the head" (https://sketchfab.com/3d-models/bag-on-the-head-a6dbfbaa4e5e4add8baa308c4459859d) by shedmon (https://sketchfab.com/shedmon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

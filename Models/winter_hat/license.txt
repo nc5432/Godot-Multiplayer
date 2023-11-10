@@ -1,0 +1,11 @@
+Model Information:
+* title:	Winter Hat
+* source:	https://sketchfab.com/3d-models/winter-hat-637a36cb74204c719883af7feb4b7c28
+* author:	StubbornFunkyDonkey (https://sketchfab.com/stubbornfunkydonkey)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Winter Hat" (https://sketchfab.com/3d-models/winter-hat-637a36cb74204c719883af7feb4b7c28) by StubbornFunkyDonkey (https://sketchfab.com/stubbornfunkydonkey) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

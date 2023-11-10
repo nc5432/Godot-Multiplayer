@@ -1,0 +1,430 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 921,
+      "max": [
+        12.300307273864746,
+        14.743236541748047,
+        19.339332580566406
+      ],
+      "min": [
+        -12.300307273864746,
+        -3.0536139011383057,
+        -12.300307273864746
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 11052,
+      "componentType": 5126,
+      "count": 921,
+      "max": [
+        0.9999722838401794,
+        1.0,
+        0.99997878074646
+      ],
+      "min": [
+        -0.9999722838401794,
+        -1.0,
+        -0.99997878074646
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 921,
+      "max": [
+        1.0,
+        0.99986732006073,
+        0.9999704957008362,
+        1.0
+      ],
+      "min": [
+        -0.9999704957008362,
+        -0.9999483823776245,
+        -0.9999704957008362,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 921,
+      "max": [
+        0.991363525390625,
+        0.9918878078460693
+      ],
+      "min": [
+        0.014174938201904297,
+        0.00390625
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3393,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 22104,
+      "componentType": 5126,
+      "count": 1066,
+      "max": [
+        7.7354607582092285,
+        1.081413745880127,
+        5.997516632080078
+      ],
+      "min": [
+        -7.7354607582092285,
+        -1.081413745880127,
+        -5.997516632080078
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 34896,
+      "componentType": 5126,
+      "count": 1066,
+      "max": [
+        0.9971689581871033,
+        0.9999610781669617,
+        0.9998205900192261
+      ],
+      "min": [
+        -0.9928534030914307,
+        -0.9996068477630615,
+        -0.981356143951416
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 14736,
+      "componentType": 5126,
+      "count": 1066,
+      "max": [
+        0.9999380111694336,
+        0.9986106753349304,
+        0.9999997615814209,
+        1.0
+      ],
+      "min": [
+        -0.999939501285553,
+        -0.999981164932251,
+        -0.9999964833259583,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7368,
+      "componentType": 5126,
+      "count": 1066,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 13572,
+      "componentType": 5125,
+      "count": 6060,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "tamzidfarhan (https://sketchfab.com/tamzidfarhan)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/propeller-hat-ac50695f2ab24b2382ab7ebb8ba89d2d",
+      "title": "Propeller Hat"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 37812,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15896,
+      "byteOffset": 37812,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 47688,
+      "byteOffset": 53708,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 31792,
+      "byteOffset": 101396,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 133188,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsRequired": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "extensionsUsed": [
+    "KHR_materials_pbrSpecularGlossiness"
+  ],
+  "images": [
+    {
+      "uri": "textures/Scene_-_Root_diffuse.png"
+    },
+    {
+      "uri": "textures/Scene_-_Root_specularGlossiness.png"
+    },
+    {
+      "uri": "textures/Scene_-_Root_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_pbrSpecularGlossiness": {
+          "diffuseFactor": [
+            0.8492759146341463,
+            0.8492759146341463,
+            0.8492759146341463,
+            1.0
+          ],
+          "diffuseTexture": {
+            "index": 0
+          },
+          "glossinessFactor": 1.0,
+          "specularFactor": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "specularGlossinessTexture": {
+            "index": 1
+          }
+        }
+      },
+      "name": "Scene_-_Root",
+      "normalTexture": {
+        "index": 2
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Hat__0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Propeller__0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.11728565394878387,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.6042646694431654e-17,
+        -0.11728565394878387,
+        0.0,
+        0.0,
+        0.11728565394878387,
+        2.6042646694431654e-17,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "ea4a7721b4f34bd6aa06282202a097a4.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        6
+      ],
+      "name": "Hat_Solo"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        0.7347131942275398,
+        0.0,
+        0.06038706023060204,
+        0.0,
+        0.0,
+        0.7652063965797424,
+        0.0,
+        0.0,
+        -0.06839912179011526,
+        0.0,
+        0.8321938021302664,
+        0.0,
+        0.12842196226119995,
+        0.1010483056306839,
+        -0.07235578447580338,
+        1.0
+      ],
+      "name": "Hat"
+    },
+    {
+      "mesh": 0,
+      "name": "Hat__0"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        1.3539862368597448,
+        -0.04744167806442823,
+        0.11128593998181813,
+        0.0,
+        0.057592491670477565,
+        1.3524735125911185,
+        -0.12414711234437247,
+        0.0,
+        -0.10638786659385387,
+        0.12836934128790806,
+        1.3491170953329943,
+        0.0,
+        0.17482393980026245,
+        10.932872772216797,
+        0.053701311349868774,
+        1.0
+      ],
+      "name": "Propeller"
+    },
+    {
+      "mesh": 1,
+      "name": "Propeller__0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
