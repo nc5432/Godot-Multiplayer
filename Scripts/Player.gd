@@ -31,7 +31,12 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * lookSensitivity)
 		camera.rotate_x(-event.relative.y * lookSensitivity)
-		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
+		camera.rotation.x = clamp(camera.rotation.x, -PI / 2, PI / 2)
+	if Input.get_connected_joypads().size() > 0:
+		var input_dir = Input.get_vector("lookLeft", "lookRight", "lookUp", "lookDown")
+		rotate_y(-input_dir.x * lookSensitivity * 5)
+		camera.rotate_x(-input_dir.y * lookSensitivity * 5)
+		camera.rotation.x = clamp(camera.rotation.x, -PI / 2, PI / 2)
 		
 	if Input.is_action_just_pressed("shoot") and animations.current_animation != "shoot":
 		shoot.rpc()
@@ -54,7 +59,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

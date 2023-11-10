@@ -1,12 +1,13 @@
+Button
+Control
+CheckBox
 MeshInstance3D
 ProgressBar
 TextureRect
-Control
 RayCast3D
 MultiplayerSynchronizer
 MultiplayerSpawner
 LineEdit
-Button
 Label
 VBoxContainer
 MarginContainer

@@ -1,9 +1,13 @@
 extends Node
 
 @onready var mainMenu = $CanvasLayer/MainMenu
-@onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/AddressEntry
+@onready var baseMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu
+@onready var hostMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting
+@onready var joinMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining
+@onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/AddressEntry
 @onready var hud = $CanvasLayer/HUD
 @onready var healthbar = $CanvasLayer/HUD/HealthBar
+@onready var upnpEnabled = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/upnpCheck
 
 const Player = preload("res://Prefabs/player.tscn")
 const PORT = 25565
@@ -15,6 +19,22 @@ func _unhandled_input(event):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
+func _on_join_pressed():
+	baseMenu.hide()
+	joinMenu.show()
+
+func _on_back_pressed_2(): #For join menu
+	joinMenu.hide()
+	baseMenu.show()
+
+func _on_host_pressed():
+	baseMenu.hide()
+	hostMenu.show()
+
+func _on_back_pressed_1(): #For host menu
+	hostMenu.hide()
+	baseMenu.show()
+
 func _on_host_button_pressed():
 	mainMenu.hide()
 	hud.show()
@@ -24,9 +44,11 @@ func _on_host_button_pressed():
 	multiplayer.peer_connected.connect(addPlayer)
 	multiplayer.peer_disconnected.connect(removePlayer)
 	addPlayer(multiplayer.get_unique_id())
-	#upnpSetup()
+	if upnpEnabled.button_pressed:
+		upnpSetup()
 
 func _on_join_button_pressed():
+	if addressEntry.text == "": return
 	mainMenu.hide()
 	hud.show()
 	
@@ -61,11 +83,5 @@ func upnpSetup():
 	var mapResult = upnp.add_port_mapping(PORT)
 	assert(mapResult == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % mapResult)
 	print("Success! Join Address: %s" % upnp.query_external_address())
-
-
-
-
-
-
 
 
