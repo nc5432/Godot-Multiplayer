@@ -1,3 +1,11 @@
-res://Scenes/world.tscn
 res://Prefabs/player.tscn
-res://Models/funny_rubber_chicken/chicken.tscn
+res://Scripts/Player.gd
+res://Scenes/world.tscn
+res://Models/bag_on_the_head/hat.tscn
+res://Models/christmas_hat/hat.tscn
+res://Models/mask/hat.tscn
+res://Models/pokemon_masters_cap/hat.tscn
+res://Models/propeller_hat/hat.tscn
+res://Models/stylized_wizard_hat/hat.tscn
+res://Models/top_hat__free_download/top_hat.tscn
+res://Models/top_hat__free_download/hat.tscn

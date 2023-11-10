@@ -11,10 +11,15 @@ const JUMP_VELOCITY: float = 10
 @onready var raycast = $Camera3D/RayCast3D
 @onready var chickenModel = $chicken
 @onready var nametag = $Username
+@onready var syncronizer = $MultiplayerSynchronizer
 
 @export var username: String = "Chicken"
+@export var hat: String = ""
 @export var lookSensitivity: float = 0.005
 @export var health: float = 3
+
+var syncTimer: int = 0
+var hattified: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = 20
@@ -26,7 +31,10 @@ func _ready():
 	chickenModel.hideMesh()
 	set_collision_layer_value(2, false)
 	username = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username:LineEdit").text
+	if username == "": username = "Chicken"
 	updateUsername()
+	var hatID: String = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/HatEntry:LineEdit").text
+	hat = "res://Models/" + hatID + "/scene.gltf"
 
 func updateUsername():
 	nametag.text = username
@@ -99,3 +107,15 @@ func receiveDamage():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "shoot":
 		animations.play("idle")
+
+func _on_multiplayer_synchronizer_synchronized():
+	if syncTimer > 5:
+		if !hattified:
+			makeHat()
+	else:
+		syncTimer += 1
+
+func makeHat():
+	if ResourceLoader.exists(hat):
+		var result = ResourceLoader.load(hat).instantiate()
+		add_child(result)

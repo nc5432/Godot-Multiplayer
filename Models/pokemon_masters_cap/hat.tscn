@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://sp8djkh1glgx"]
+
+[ext_resource type="PackedScene" uid="uid://s0n1hxn4gxfc" path="res://Models/pokemon_masters_cap/scene.gltf" id="1_55tv4"]
+
+[node name="pokemon_masters_cap" instance=ExtResource("1_55tv4")]
+transform = Transform3D(0.000274786, 0, 0, 0, 0.00025841, 0, 0, 0, 0.000296384, 0, 1.78709, 0)

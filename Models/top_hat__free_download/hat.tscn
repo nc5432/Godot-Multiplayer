@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuj8bcdwga64y"]
+
+[ext_resource type="PackedScene" uid="uid://bo3noe8hcgwy1" path="res://Models/top_hat__free_download/scene.gltf" id="1_dw2sn"]
+
+[node name="scene" instance=ExtResource("1_dw2sn")]
+transform = Transform3D(0.22, 0, 0, 0, 0.227015, -0.0728829, 0, 0.0621212, 0.266342, 0, 1.87115, 0.0404469)

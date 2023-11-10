@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr7wek14136qo"]
+
+[ext_resource type="PackedScene" uid="uid://dhsc3iy03ivnm" path="res://Models/christmas_hat/scene.gltf" id="1_v5m7x"]
+
+[node name="christmas_hat" instance=ExtResource("1_v5m7x")]
+transform = Transform3D(-1.57339, -0.049065, -0.372905, -0.0997067, 1.96592, 0.463433, 0.262876, 0.45199, -2.05617, -0.0696718, 1.94646, 0.0717383)
