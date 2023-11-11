@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5r625huwaisf"]
+
+[ext_resource type="PackedScene" uid="uid://b3hnc8dr5t0wn" path="res://Models/white_mask/scene.gltf" id="1_7nxjs"]
+[ext_resource type="Script" path="res://Scripts/HatHider.gd" id="2_uepx6"]
+
+[node name="white_mask" node_paths=PackedStringArray("meshes") instance=ExtResource("1_7nxjs")]
+transform = Transform3D(-1.80111, -1.20039e-07, -2.48553e-07, 7.07313e-15, 1.99832, -0.654861, 2.71961e-07, -0.794985, -1.64609, -0.00340742, 1.75572, -0.0535585)
+script = ExtResource("2_uepx6")
+meshes = [NodePath("Sketchfab_model/Collada visual scene group/g/defaultMaterial"), NodePath("Sketchfab_model/Collada visual scene group/g2/defaultMaterial2")]

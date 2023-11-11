@@ -1,3 +1,12 @@
+/home/nc543/Documents/Godot/Builds
+/home/nc543/Documents/Godot/Projects/Godot Multiplayer/Exports/Windows
+res://Occlusion Data
+res://Models/Hats
+res://Scripts
+res://Models/worn_baseball_ball
+res://Models/winter_hat
+res://Models/white_mask
+res://Models/vintage_helmet
 res://Models/top_hat__free_download
 res://Models/stylized_wizard_hat
 res://Models/propeller_hat
@@ -5,13 +14,9 @@ res://Models/pokemon_masters_cap
 res://Models/mask
 res://Models/christmas_hat
 res://Models/bag_on_the_head
-/home/nc543/Documents/Godot/Projects/Godot Multiplayer/Exports/Windows
-/home/nc543/Documents/Godot/Builds
 /home/nc543/Documents/Godot/Projects/Godot Multiplayer/Exports/Mac
-res://Scripts
 res://Models/funny_rubber_chicken
 res://addons/kenney_particle_pack
 res://Prefabs
 res://Scenes
 /var/lib/flatpak/exports/bin
-/var/lib/flatpak/repo/refs/heads/deploy/app/org.blender.Blender/x86_64

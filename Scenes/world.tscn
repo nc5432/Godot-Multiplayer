@@ -146,8 +146,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 23.0
-offset_bottom = 54.0
+offset_top = 30.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Host"
@@ -157,24 +157,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 59.0
-offset_bottom = 90.0
+offset_top = 72.0
+offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Enter Username"
 max_length = 21
-
-[node name="HatEntry" type="LineEdit" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 94.0
-offset_bottom = 125.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Hat ID"
 
 [node name="Button" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
 layout_mode = 1
@@ -187,6 +175,60 @@ offset_right = 43.0
 offset_bottom = 167.0
 grow_vertical = 0
 text = "Quit"
+
+[node name="HatSelection" type="OptionButton" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = 141.0
+offset_bottom = 172.0
+grow_horizontal = 0
+grow_vertical = 0
+item_count = 12
+selected = 0
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Bag"
+popup/item_1/id = 1
+popup/item_2/text = "Santa Hat"
+popup/item_2/id = 2
+popup/item_3/text = "Ninja Mask"
+popup/item_3/id = 3
+popup/item_4/text = "Master Hat"
+popup/item_4/id = 4
+popup/item_5/text = "Propeller Hat"
+popup/item_5/id = 5
+popup/item_6/text = "Wizard Hat"
+popup/item_6/id = 6
+popup/item_7/text = "Top Hat"
+popup/item_7/id = 7
+popup/item_8/text = "Soldier Helmet"
+popup/item_8/id = 8
+popup/item_9/text = "Mask"
+popup/item_9/id = 9
+popup/item_10/text = "Beanie"
+popup/item_10/id = 10
+popup/item_11/text = "Baseball"
+popup/item_11/id = 11
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = 144.0
+offset_right = 93.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Hat:"
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
 visible = false

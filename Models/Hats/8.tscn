@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cew0qy024scng"]
+
+[ext_resource type="PackedScene" uid="uid://b5kwhin0tcp5k" path="res://Models/vintage_helmet/scene.gltf" id="1_xm8pu"]
+[ext_resource type="Script" path="res://Scripts/HatHider.gd" id="2_a6bob"]
+
+[node name="vintage_helmet" node_paths=PackedStringArray("meshes") instance=ExtResource("1_xm8pu")]
+transform = Transform3D(-0.00190932, 5.27858e-11, -2.83426e-10, 0, 0.00187705, 0.000349584, 2.88299e-10, 0.000349584, -0.00187705, 6.2026e-09, 1.83662, 0.0709494)
+script = ExtResource("2_a6bob")
+meshes = [NodePath("Sketchfab_model/model_obj_cleaner_gles/Object_2")]

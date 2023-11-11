@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqha0ejxwqexe"]
+
+[ext_resource type="PackedScene" uid="uid://bjr8cts018f8k" path="res://Models/stylized_wizard_hat/scene.gltf" id="1_k0mmh"]
+[ext_resource type="Script" path="res://Scripts/HatHider.gd" id="2_0dp14"]
+
+[node name="scene" node_paths=PackedStringArray("meshes") instance=ExtResource("1_k0mmh")]
+transform = Transform3D(-0.311491, -5.385e-09, 0.0931687, -0.011425, 0.476421, -0.0568391, -0.0755176, -0.0720774, -0.375698, -0.0225068, -0.0897104, 0.419518)
+script = ExtResource("2_0dp14")
+meshes = [NodePath("Sketchfab_model/83952d8b8a4c420199136586b7e376b6_obj_cleaner_materialmerger_gles/Object_2")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkr3mm4bfdwi"]
+
+[ext_resource type="PackedScene" uid="uid://nsyxaulf1ylw" path="res://Models/propeller_hat/scene.gltf" id="1_pwy3l"]
+[ext_resource type="Script" path="res://Scripts/HatHider.gd" id="2_kq5ue"]
+
+[node name="propeller_hat" node_paths=PackedStringArray("meshes") instance=ExtResource("1_pwy3l")]
+transform = Transform3D(-0.182144, -2.6844e-10, -3.45164e-08, -6.95311e-09, 0.202639, 0.0597313, 2.56862e-08, 0.0529498, -0.228592, 0, 1.853, 0)
+script = ExtResource("2_kq5ue")
+meshes = [NodePath("Sketchfab_model/ea4a7721b4f34bd6aa06282202a097a4_fbx/RootNode/Hat_Solo/Hat/Hat__0"), NodePath("Sketchfab_model/ea4a7721b4f34bd6aa06282202a097a4_fbx/RootNode/Hat_Solo/Propeller/Propeller__0")]

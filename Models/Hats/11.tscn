@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjn1dwgx0sgp1"]
+
+[ext_resource type="PackedScene" uid="uid://n70gb1n6316k" path="res://Models/worn_baseball_ball/scene.gltf" id="1_hygvt"]
+[ext_resource type="Script" path="res://Scripts/HatHider.gd" id="2_bakty"]
+
+[node name="scene" node_paths=PackedStringArray("meshes") instance=ExtResource("1_hygvt")]
+transform = Transform3D(0.614393, 0, 0, 0, 0.614393, 0, 0, 0, 0.614393, 0, 1.78671, 0.0260369)
+script = ExtResource("2_bakty")
+meshes = [NodePath("Sketchfab_model/fd9aa798ceaa4d99ab418c1f837e66f4_fbx/RootNode/polySurface5/polySurface5_lambert1_0")]

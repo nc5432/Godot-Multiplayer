@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7asuc4cmt2mv"]
-
-[ext_resource type="PackedScene" uid="uid://11ijaox7vxiu" path="res://Models/bag_on_the_head/scene.gltf" id="1_iug7w"]
-
-[node name="bag_on_the_head" instance=ExtResource("1_iug7w")]
-transform = Transform3D(-2.42077, 3.36929e-08, -3.81727e-07, -6.02693e-08, 1.89662, 0.751056, 3.47621e-07, 0.56346, -2.52807, 0, 1.714, 0)

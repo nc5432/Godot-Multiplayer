@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpvy7sm57pjn7"]
+[gd_scene load_steps=7 format=3 uid="uid://dpvy7sm57pjn7"]
 
 [ext_resource type="PackedScene" uid="uid://ca0iv4endjdmn" path="res://Models/environment.glb" id="1_uxmcj"]
 [ext_resource type="Texture2D" uid="uid://ckhpjran4mily" path="res://addons/kenney_prototype_textures/dark/texture_04.png" id="2_sqeyl"]
 [ext_resource type="Texture2D" uid="uid://c4nnm6ptome8x" path="res://addons/kenney_prototype_textures/red/texture_10.png" id="3_56npw"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bd507vee6ic1p" path="res://Occlusion Data/environment.occ" id="4_m2xw6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf5c2"]
 albedo_texture = ExtResource("2_sqeyl")
@@ -17,3 +18,6 @@ uv1_triplanar = true
 [node name="Plane" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_mf5c2")
 surface_material_override/1 = SubResource("StandardMaterial3D_mikuy")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="1"]
+occluder = ExtResource("4_m2xw6")

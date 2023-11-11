@@ -1,3 +1,7 @@
+OccluderInstance3D
+MultiMeshInstance3D
+Label
+OptionButton
 LineEdit
 Node3D
 MeshInstance3D
@@ -12,7 +16,6 @@ TextureRect
 RayCast3D
 MultiplayerSynchronizer
 MultiplayerSpawner
-Label
 VBoxContainer
 MarginContainer
 PanelContainer

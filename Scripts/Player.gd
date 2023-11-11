@@ -14,7 +14,7 @@ const JUMP_VELOCITY: float = 10
 @onready var syncronizer = $MultiplayerSynchronizer
 
 @export var username: String = "Chicken"
-@export var hat: String = ""
+@export var hat: int = 0
 @export var lookSensitivity: float = 0.005
 @export var health: float = 3
 
@@ -29,12 +29,13 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera.current = true
 	chickenModel.hideMesh()
+	nametag.hide()
 	set_collision_layer_value(2, false)
 	username = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username:LineEdit").text
 	if username == "": username = "Chicken"
 	updateUsername()
-	var hatID: String = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/HatEntry:LineEdit").text
-	hat = "res://Models/" + hatID + "/scene.gltf"
+	hat = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/HatSelection:OptionButton").selected
+	makeHat()
 
 func updateUsername():
 	nametag.text = username
@@ -112,10 +113,14 @@ func _on_multiplayer_synchronizer_synchronized():
 	if syncTimer > 5:
 		if !hattified:
 			makeHat()
+			hattified = true
 	else:
 		syncTimer += 1
 
 func makeHat():
-	if ResourceLoader.exists(hat):
-		var result = ResourceLoader.load(hat).instantiate()
+	var hatPath: String = "res://Models/Hats/" + str(hat) + ".tscn"
+	if ResourceLoader.exists(hatPath):
+		var result = ResourceLoader.load(hatPath).instantiate()
 		add_child(result)
+		if is_multiplayer_authority():
+			result.hideMesh()
