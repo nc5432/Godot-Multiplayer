@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4lc7asimanmh"]
+[gd_scene load_steps=18 format=3 uid="uid://b4lc7asimanmh"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_iv0wx"]
 [ext_resource type="PackedScene" uid="uid://da1qh4xri24f2" path="res://Models/kimber_1911/scene.gltf" id="2_0x8c2"]
 [ext_resource type="PackedScene" uid="uid://d164amgdtaa5k" path="res://Models/funny_rubber_chicken/chicken.tscn" id="2_607tw"]
 [ext_resource type="Texture2D" uid="uid://bx0esoasfh733" path="res://addons/kenney_particle_pack/star_06.png" id="3_cnxpw"]
+[ext_resource type="AudioStream" uid="uid://cfwx1moklfkfj" path="res://Sound Effects/weapon_gun_1911_A_41.ogg" id="5_fpyjq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ruebo"]
 radius = 0.4
@@ -195,6 +196,9 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_qufyg")
 draw_pass_1 = SubResource("PlaneMesh_yxv4l")
 
+[node name="Gunshot" type="AudioStreamPlayer3D" parent="Camera3D/gun"]
+stream = ExtResource("5_fpyjq")
+
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0776906)
 target_position = Vector3(0, 0, -100)
@@ -211,6 +215,9 @@ libraries = {
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_nfq0k")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="synchronized" from="MultiplayerSynchronizer" to="." method="_on_multiplayer_synchronizer_synchronized"]

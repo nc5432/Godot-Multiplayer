@@ -1,3 +1,11 @@
+Button
+VBoxContainer
+MarginContainer
+PanelContainer
+Control
+AudioStreamPlayer
+AudioStreamPlayer3D
+AudioListener3D
 OccluderInstance3D
 MultiMeshInstance3D
 Label
@@ -7,18 +15,13 @@ Node3D
 MeshInstance3D
 Label3D
 RichTextLabel
-Button
 TextEdit
-Control
 CheckBox
 ProgressBar
 TextureRect
 RayCast3D
 MultiplayerSynchronizer
 MultiplayerSpawner
-VBoxContainer
-MarginContainer
-PanelContainer
 CanvasLayer
 GPUParticles3D
 AnimationPlayer
@@ -27,4 +30,3 @@ DirectionalLight2D
 Camera3D
 CollisionShape3D
 CharacterBody3D
-Node

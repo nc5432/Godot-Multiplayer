@@ -12,6 +12,8 @@ const JUMP_VELOCITY: float = 10
 @onready var chickenModel = $chicken
 @onready var nametag = $Username
 @onready var syncronizer = $MultiplayerSynchronizer
+@onready var gunshot = $Camera3D/gun/Gunshot
+@onready var listener = $AudioListener3D
 
 @export var username: String = "Chicken"
 @export var hat: int = 0
@@ -36,6 +38,7 @@ func _ready():
 	updateUsername()
 	hat = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/HatSelection:OptionButton").selected
 	makeHat()
+	listener.make_current()
 
 func updateUsername():
 	nametag.text = username
@@ -57,6 +60,7 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("shoot") and animations.current_animation != "shoot":
 		shoot.rpc()
+		gunshot.play()
 		if raycast.is_colliding():
 			var hit_player = raycast.get_collider()
 			hit_player.receiveDamage.rpc_id(hit_player.get_multiplayer_authority())
@@ -124,3 +128,6 @@ func makeHat():
 		add_child(result)
 		if is_multiplayer_authority():
 			result.hideMesh()
+
+func pause():
+	pass

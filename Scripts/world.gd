@@ -4,6 +4,7 @@ extends Node
 @onready var baseMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu
 @onready var hostMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting
 @onready var joinMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining
+@onready var pauseMenu = $CanvasLayer/PauseMenu
 @onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/AddressEntry
 @onready var username = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username
 @onready var hud = $CanvasLayer/HUD
@@ -13,12 +14,21 @@ extends Node
 const Player = preload("res://Prefabs/player.tscn")
 const PORT = 25565
 var enet_peer = ENetMultiplayerPeer.new()
+var paused: bool = false
+var chimkin
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
 
 func _unhandled_input(event):
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+	if Input.is_action_just_pressed("quit") and mainMenu.visible:
+		pause()
+		#get_tree().quit()
+
+func pause():
+	if paused:
+		pauseMenu.hide()
+	else:
+		pauseMenu.show()
 
 func _on_join_pressed():
 	baseMenu.hide()
