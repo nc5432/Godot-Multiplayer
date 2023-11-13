@@ -162,7 +162,7 @@ offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Enter Username"
-max_length = 21
+max_length = 50
 
 [node name="Button" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
 layout_mode = 1

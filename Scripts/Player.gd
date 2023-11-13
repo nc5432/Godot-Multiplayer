@@ -14,6 +14,7 @@ const JUMP_VELOCITY: float = 10
 @onready var syncronizer = $MultiplayerSynchronizer
 @onready var gunshot = $Camera3D/gun/Gunshot
 @onready var listener = $AudioListener3D
+@onready var pauseMenu = get_node("/root/World/CanvasLayer/PauseMenu")
 
 @export var username: String = "Chicken"
 @export var hat: int = 0
@@ -22,6 +23,7 @@ const JUMP_VELOCITY: float = 10
 
 var syncTimer: int = 0
 var hattified: bool = false
+var paused: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = 20
@@ -47,7 +49,9 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 func _unhandled_input(event):
-	if not is_multiplayer_authority(): return
+	if not is_multiplayer_authority() or paused: return
+	if Input.is_action_just_pressed("quit"):
+		pause()
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * lookSensitivity)
 		camera.rotate_x(-event.relative.y * lookSensitivity)
@@ -74,7 +78,7 @@ func shoot():
 	flash.emitting = true
 
 func _physics_process(delta):
-	if not is_multiplayer_authority(): return
+	if not is_multiplayer_authority() or paused: return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -130,4 +134,8 @@ func makeHat():
 			result.hideMesh()
 
 func pause():
-	pass
+	if paused:
+		pauseMenu.hide()
+	else:
+		pauseMenu.show()
+	paused = !paused
