@@ -14,7 +14,8 @@ const JUMP_VELOCITY: float = 10
 @onready var syncronizer = $MultiplayerSynchronizer
 @onready var gunshot = $Camera3D/gun/Gunshot
 @onready var listener = $AudioListener3D
-@onready var pauseMenu = get_node("/root/World/CanvasLayer/PauseMenu")
+@onready var pauseMenu = $CanvasLayer/PauseMenu
+@onready var world = $/root/World
 
 @export var username: String = "Chicken"
 @export var hat: int = 0
@@ -49,9 +50,10 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 func _unhandled_input(event):
-	if not is_multiplayer_authority() or paused: return
+	if not is_multiplayer_authority(): return
 	if Input.is_action_just_pressed("quit"):
 		pause()
+	if paused: return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * lookSensitivity)
 		camera.rotate_x(-event.relative.y * lookSensitivity)
@@ -136,6 +138,16 @@ func makeHat():
 func pause():
 	if paused:
 		pauseMenu.hide()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		pauseMenu.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	paused = !paused
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+func _on_main_menu_pressed():
+	world.enet_peer.disconnect()
+	world.showMenu()
+	queue_free()

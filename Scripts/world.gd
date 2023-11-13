@@ -4,7 +4,7 @@ extends Node
 @onready var baseMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu
 @onready var hostMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting
 @onready var joinMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining
-@onready var pauseMenu = $CanvasLayer/PauseMenu
+@onready var optionMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu
 @onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/AddressEntry
 @onready var username = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username
 @onready var hud = $CanvasLayer/HUD
@@ -18,17 +18,6 @@ var paused: bool = false
 var chimkin
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
-
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("quit") and mainMenu.visible:
-		pause()
-		#get_tree().quit()
-
-func pause():
-	if paused:
-		pauseMenu.hide()
-	else:
-		pauseMenu.show()
 
 func _on_join_pressed():
 	baseMenu.hide()
@@ -65,7 +54,6 @@ func _on_join_button_pressed():
 	
 	enet_peer.create_client(addressEntry.text, PORT)
 	multiplayer.multiplayer_peer = enet_peer
-	
 
 func addPlayer(peer_id):
 	var player = Player.instantiate()
@@ -98,3 +86,11 @@ func upnpSetup():
 
 func _on_button_pressed():
 	get_tree().quit()
+
+func _on_cancel_pressed():
+	optionMenu.hide()
+	mainMenu.show()
+
+func playerDisconnect():
+	mainMenu.show()
+	enet_peer.disconnect_peer(peer_id, true)

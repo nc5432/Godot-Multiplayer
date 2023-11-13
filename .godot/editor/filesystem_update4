@@ -1,3 +1,4 @@
+res://Scenes/world.tscn
 res://Prefabs/player.tscn
 res://Scripts/Player.gd
-res://Scenes/world.tscn
+res://Scripts/world.gd

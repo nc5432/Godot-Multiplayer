@@ -28,9 +28,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 314.0
-offset_top = 200.0
+offset_top = 207.0
 offset_right = -314.0
-offset_bottom = -200.0
+offset_bottom = -207.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -44,12 +44,6 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
-
-[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Main Menu"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Hosting" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 visible = false
@@ -89,6 +83,11 @@ offset_bottom = 102.0
 grow_vertical = 0
 text = "Back"
 
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting"]
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Joining" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -127,7 +126,13 @@ offset_bottom = 98.0
 grow_vertical = 0
 text = "Back"
 
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining"]
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BaseMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Join" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
@@ -184,8 +189,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -158.0
-offset_top = 141.0
-offset_bottom = 172.0
+offset_top = 136.0
+offset_bottom = 167.0
 grow_horizontal = 0
 grow_vertical = 0
 item_count = 12
@@ -223,12 +228,270 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 53.0
-offset_top = 144.0
+offset_top = 139.0
 offset_right = 93.0
-offset_bottom = 170.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Hat:"
+
+[node name="Options" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = 136.0
+offset_right = -118.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Options"
+
+[node name="Label2" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsTitle" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Options"
+
+[node name="FOV" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 33.0
+offset_right = -65.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 45.0
+max_value = 120.0
+step = 5.0
+value = 75.0
+
+[node name="FOVLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 26.0
+offset_right = 129.0
+offset_bottom = 52.0
+text = "Field of View:"
+horizontal_alignment = 2
+
+[node name="FOVNum" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 26.5
+offset_right = -14.0
+offset_bottom = 52.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "75"
+
+[node name="Sensitivity" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 61.0
+offset_right = -65.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 45.0
+max_value = 120.0
+step = 5.0
+value = 75.0
+
+[node name="SensitivityLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+offset_left = 27.0
+offset_top = 54.0
+offset_right = 129.0
+offset_bottom = 80.0
+text = "Sensitivity:"
+horizontal_alignment = 2
+
+[node name="SensitivityNum" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 54.5
+offset_right = -14.0
+offset_bottom = 80.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "75"
+
+[node name="MasterVolume" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 88.0
+offset_right = -65.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 70.0
+
+[node name="MasterVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+offset_left = 6.0
+offset_top = 81.0
+offset_right = 128.0
+offset_bottom = 107.0
+text = "Master Volume:"
+horizontal_alignment = 2
+
+[node name="MasterVolumeValue" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 81.5
+offset_right = -14.0
+offset_bottom = 107.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "70"
+
+[node name="MusicVolume" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 117.0
+offset_right = -65.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 70.0
+
+[node name="MusicVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+offset_left = 6.0
+offset_top = 110.0
+offset_right = 128.0
+offset_bottom = 136.0
+text = "Music Volume:"
+horizontal_alignment = 2
+
+[node name="MusicVolumeNum" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 110.5
+offset_right = -14.0
+offset_bottom = 136.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "70"
+
+[node name="SoundFXVolume" type="HSlider" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 135.0
+offset_top = 144.0
+offset_right = -65.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 70.0
+
+[node name="SoundFXVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+offset_left = 6.0
+offset_top = 137.0
+offset_right = 128.0
+offset_bottom = 163.0
+text = "Effects Volume:"
+horizontal_alignment = 2
+
+[node name="SoundFXVolumeValue" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 137.5
+offset_right = -14.0
+offset_bottom = 163.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "70"
+
+[node name="Cancel" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 172.0
+offset_right = -12.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cancel
+"
+
+[node name="Apply" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 172.0
+offset_right = 84.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+text = "Apply"
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
 visible = false
@@ -269,43 +532,6 @@ max_value = 3.0
 value = 3.0
 show_percentage = false
 
-[node name="PauseMenu" type="PanelContainer" parent="CanvasLayer"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 315.0
-offset_top = 253.0
-offset_right = -315.0
-offset_bottom = -252.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PauseMenu"]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Resume"
-
-[node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-text = "Main Menu"
-
-[node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Prefabs/player.tscn")
 spawn_path = NodePath("..")
@@ -319,4 +545,5 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
