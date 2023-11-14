@@ -66,7 +66,6 @@ func _unhandled_input(event):
 		
 	if Input.is_action_just_pressed("shoot") and animations.current_animation != "shoot":
 		shoot.rpc()
-		gunshot.play()
 		if raycast.is_colliding():
 			var hit_player = raycast.get_collider()
 			hit_player.receiveDamage.rpc_id(hit_player.get_multiplayer_authority())
@@ -76,6 +75,7 @@ func _unhandled_input(event):
 func shoot():
 	animations.stop()
 	animations.play("shoot")
+	gunshot.play()
 	flash.restart()
 	flash.emitting = true
 

@@ -91,6 +91,6 @@ func _on_cancel_pressed():
 	optionMenu.hide()
 	mainMenu.show()
 
-func playerDisconnect():
+func playerDisconnect(peer_id):
 	mainMenu.show()
 	enet_peer.disconnect_peer(peer_id, true)

@@ -27,10 +27,10 @@ shadow_enabled = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 314.0
-offset_top = 207.0
-offset_right = -314.0
-offset_bottom = -207.0
+offset_left = 308.0
+offset_top = 202.0
+offset_right = -308.0
+offset_bottom = -202.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -54,8 +54,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -10.0
-offset_bottom = 21.0
+offset_top = 29.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 button_pressed = true
@@ -66,8 +66,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 31.0
-offset_bottom = 62.0
+offset_top = 70.0
+offset_bottom = 101.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Host"
@@ -77,13 +77,17 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 71.0
+offset_top = 172.0
 offset_right = 45.0
-offset_bottom = 102.0
+offset_bottom = 203.0
 grow_vertical = 0
 text = "Back"
 
 [node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting"]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 286.0
+offset_bottom = 26.0
 text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -97,8 +101,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -11.0
-offset_bottom = 20.0
+offset_top = 35.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Enter Address"
@@ -109,8 +113,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 28.0
-offset_bottom = 59.0
+offset_top = 74.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Join"
@@ -120,28 +124,41 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 67.0
+offset_top = 171.0
 offset_right = 45.0
-offset_bottom = 98.0
+offset_bottom = 202.0
 grow_vertical = 0
 text = "Back"
 
 [node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining"]
+layout_mode = 0
+offset_left = 201.0
+offset_right = 289.0
+offset_bottom = 26.0
 text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BaseMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = -6.0
+offset_right = 290.0
+offset_bottom = 20.0
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Join" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -13.0
-offset_bottom = 18.0
+offset_top = 25.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Join"
@@ -151,8 +168,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 30.0
-offset_bottom = 61.0
+offset_top = 68.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Host"
@@ -162,8 +179,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 72.0
-offset_bottom = 103.0
+offset_top = 110.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Enter Username"
@@ -175,9 +192,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = 136.0
+offset_top = 174.0
 offset_right = 43.0
-offset_bottom = 167.0
+offset_bottom = 205.0
 grow_vertical = 0
 text = "Quit"
 
@@ -189,8 +206,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -158.0
-offset_top = 136.0
-offset_bottom = 167.0
+offset_top = 174.0
+offset_bottom = 205.0
 grow_horizontal = 0
 grow_vertical = 0
 item_count = 12
@@ -228,9 +245,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 53.0
-offset_top = 139.0
+offset_top = 177.0
 offset_right = 93.0
-offset_bottom = 165.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Hat:"
@@ -243,19 +260,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -188.0
-offset_top = 136.0
+offset_top = 174.0
 offset_right = -118.0
-offset_bottom = 167.0
+offset_bottom = 205.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Options"
 
-[node name="Label2" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
-text = "Main Menu"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="OptionMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="OptionsTitle" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
@@ -328,6 +341,7 @@ step = 5.0
 value = 75.0
 
 [node name="SensitivityLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 54.0
 offset_right = 129.0
@@ -365,6 +379,7 @@ grow_vertical = 2
 value = 70.0
 
 [node name="MasterVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 81.0
 offset_right = 128.0
@@ -402,6 +417,7 @@ grow_vertical = 2
 value = 70.0
 
 [node name="MusicVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 110.0
 offset_right = 128.0
@@ -439,6 +455,7 @@ grow_vertical = 2
 value = 70.0
 
 [node name="SoundFXVolumeLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 137.0
 offset_right = 128.0
@@ -505,15 +522,21 @@ mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.0
+offset_top = -322.0
+offset_right = -55.0
+offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.03, 0.03)
 pivot_offset = Vector2(576, 324)
 texture = ExtResource("3_q45p6")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD"]
 layout_mode = 1
