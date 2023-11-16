@@ -1,9 +1,12 @@
 extends Node
 
+signal pausing()
+
 @onready var mainMenu = $CanvasLayer/MainMenu
 @onready var baseMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu
 @onready var hostMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting
 @onready var joinMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining
+@onready var pauseMenu = $CanvasLayer/PauseMenu
 @onready var optionMenu = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu
 @onready var addressEntry = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/AddressEntry
 @onready var username = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Username
@@ -15,9 +18,16 @@ const Player = preload("res://Prefabs/player.tscn")
 const PORT = 25565
 var enet_peer = ENetMultiplayerPeer.new()
 var paused: bool = false
+var ingame: bool = false
 var chimkin
+var local_peer_id
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
+
+func _unhandled_input(event):
+	if (not is_multiplayer_authority()): return
+	if ingame and Input.is_action_just_pressed("quit"):
+		pause()
 
 func _on_join_pressed():
 	baseMenu.hide()
@@ -36,8 +46,10 @@ func _on_back_pressed_1(): #For host menu
 	baseMenu.show()
 
 func _on_host_button_pressed():
+	hostMenu.hide()
 	mainMenu.hide()
 	hud.show()
+	ingame = true
 	
 	enet_peer.create_server(PORT)
 	multiplayer.multiplayer_peer = enet_peer
@@ -49,8 +61,10 @@ func _on_host_button_pressed():
 
 func _on_join_button_pressed():
 	if addressEntry.text == "": return
+	joinMenu.hide()
 	mainMenu.hide()
 	hud.show()
+	ingame = true
 	
 	enet_peer.create_client(addressEntry.text, PORT)
 	multiplayer.multiplayer_peer = enet_peer
@@ -62,6 +76,7 @@ func addPlayer(peer_id):
 	add_child(player)
 	if player.is_multiplayer_authority():
 		player.healthChanged.connect(updateHealthBar)
+		local_peer_id = peer_id
 
 func removePlayer(peer_id):
 	var player = get_node_or_null(str(peer_id))
@@ -74,6 +89,7 @@ func updateHealthBar(health):
 func _on_multiplayer_spawner_spawned(node):
 	if node.is_multiplayer_authority():
 		node.healthChanged.connect(updateHealthBar)
+		chimkin = node
 
 func upnpSetup():
 	var upnp = UPNP.new()
@@ -84,8 +100,17 @@ func upnpSetup():
 	assert(mapResult == UPNP.UPNP_RESULT_SUCCESS, "UPNP Port Mapping Failed! Error %s" % mapResult)
 	print("Success! Join Address: %s" % upnp.query_external_address())
 
-func _on_button_pressed():
-	get_tree().quit()
+func pause():
+	if paused:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		pauseMenu.hide()
+		mainMenu.hide()
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		mainMenu.show()
+		pauseMenu.show()
+	paused = not paused
+	pausing.emit()
 
 func _on_cancel_pressed():
 	optionMenu.hide()
@@ -94,3 +119,10 @@ func _on_cancel_pressed():
 func playerDisconnect(peer_id):
 	mainMenu.show()
 	enet_peer.disconnect_peer(peer_id, true)
+
+func quit():
+	get_tree().quit()
+
+func _on_main_menu_pressed():
+	var player = get_node_or_null(str(local_peer_id))
+	enet_peer.close()

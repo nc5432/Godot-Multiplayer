@@ -555,6 +555,52 @@ max_value = 3.0
 value = 3.0
 show_percentage = false
 
+[node name="PauseMenu" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.135937
+anchor_top = 0.166667
+anchor_right = 0.864062
+anchor_bottom = 0.833333
+offset_left = 315.0
+offset_top = 253.0
+offset_right = -315.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Prefabs/player.tscn")
 spawn_path = NodePath("..")
@@ -567,6 +613,9 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Joining/Back" to="." method="_on_back_pressed_2"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Button" to="." method="quit"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="pause"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Quit" to="." method="quit"]
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]

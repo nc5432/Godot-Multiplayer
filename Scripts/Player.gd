@@ -14,7 +14,6 @@ const JUMP_VELOCITY: float = 10
 @onready var syncronizer = $MultiplayerSynchronizer
 @onready var gunshot = $Camera3D/gun/Gunshot
 @onready var listener = $AudioListener3D
-@onready var pauseMenu = $CanvasLayer/PauseMenu
 @onready var world = $/root/World
 
 @export var username: String = "Chicken"
@@ -24,7 +23,7 @@ const JUMP_VELOCITY: float = 10
 
 var syncTimer: int = 0
 var hattified: bool = false
-var paused: bool = false
+@export var paused: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = 20
@@ -42,6 +41,7 @@ func _ready():
 	hat = get_node("/root/World/CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/HatSelection:OptionButton").selected
 	makeHat()
 	listener.make_current()
+	world.pausing.connect(pause)
 
 func updateUsername():
 	nametag.text = username
@@ -50,10 +50,7 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 func _unhandled_input(event):
-	if not is_multiplayer_authority(): return
-	if Input.is_action_just_pressed("quit"):
-		pause()
-	if paused: return
+	if not is_multiplayer_authority() or world.paused: return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * lookSensitivity)
 		camera.rotate_x(-event.relative.y * lookSensitivity)
@@ -135,19 +132,10 @@ func makeHat():
 		if is_multiplayer_authority():
 			result.hideMesh()
 
-func pause():
-	if paused:
-		pauseMenu.hide()
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	else:
-		pauseMenu.show()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	paused = !paused
-
-func _on_quit_pressed():
-	get_tree().quit()
-
 func _on_main_menu_pressed():
 	world.enet_peer.disconnect()
 	world.showMenu()
 	queue_free()
+
+func pause():
+	paused = not paused
