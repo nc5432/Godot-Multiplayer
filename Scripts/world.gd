@@ -25,7 +25,7 @@ var local_peer_id
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
 
 func _unhandled_input(event):
-	if (not is_multiplayer_authority()): return
+	#if (not is_multiplayer_authority()): return
 	if ingame and Input.is_action_just_pressed("quit"):
 		pause()
 
