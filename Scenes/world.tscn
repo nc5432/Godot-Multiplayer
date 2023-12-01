@@ -140,6 +140,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BaseMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu"]
@@ -268,7 +269,6 @@ grow_vertical = 0
 text = "Options"
 
 [node name="OptionMenu" type="Control" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="OptionsTitle" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
@@ -486,9 +486,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -72.0
-offset_top = 172.0
+offset_top = 192.0
 offset_right = -12.0
-offset_bottom = 203.0
+offset_bottom = 223.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Cancel
@@ -502,13 +502,29 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = 172.0
+offset_top = 192.0
 offset_right = 84.0
-offset_bottom = 203.0
+offset_bottom = 223.0
 grow_horizontal = 2
 grow_vertical = 0
 disabled = true
 text = "Apply"
+
+[node name="VSyncBox" type="CheckBox" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 165.0
+offset_right = 156.0
+offset_bottom = 189.0
+button_pressed = true
+
+[node name="VSyncLabel" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu"]
+offset_left = 7.0
+offset_top = 164.0
+offset_right = 129.0
+offset_bottom = 190.0
+text = "VSync:"
+horizontal_alignment = 2
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
 visible = false
@@ -615,6 +631,7 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/BaseMenu/Button" to="." method="quit"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/VSyncBox" to="." method="_on_v_sync_box_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="pause"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/MarginContainer/VBoxContainer/Quit" to="." method="quit"]

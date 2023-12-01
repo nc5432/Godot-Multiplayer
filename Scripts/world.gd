@@ -14,6 +14,7 @@ signal pausing()
 @onready var healthbar = $CanvasLayer/HUD/HealthBar
 @onready var upnpEnabled = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/upnpCheck
 
+const SAVE_FILE: String = "saves/options.res"
 const Player = preload("res://Prefabs/player.tscn")
 const PORT = 25565
 var enet_peer = ENetMultiplayerPeer.new()
@@ -21,6 +22,7 @@ var paused: bool = false
 var ingame: bool = false
 var chimkin
 var local_peer_id
+var vsync: bool = true
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
 
@@ -126,3 +128,25 @@ func quit():
 func _on_main_menu_pressed():
 	var player = get_node_or_null(str(local_peer_id))
 	enet_peer.close()
+
+func _on_v_sync_box_pressed():
+	if vsync:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	vsync = !vsync
+
+func save():
+	var save_game = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
+	save_game.store_line(JSON.stringify({"vsync": vsync}))
+
+func loadSave():
+	if not FileAccess.file_exists(SAVE_FILE):
+		initSave()
+	var save_game = FileAccess.open(SAVE_FILE, FileAccess.READ)
+	
+
+func initSave():
+	var save_game = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
+	save_game.store_line(JSON.stringify({"vsync": true}))
+

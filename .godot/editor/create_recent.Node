@@ -1,5 +1,7 @@
-Button
+CheckBox
+OptionButton
 Label
+Button
 HSlider
 Control
 CanvasLayer
@@ -11,14 +13,12 @@ AudioStreamPlayer3D
 AudioListener3D
 OccluderInstance3D
 MultiMeshInstance3D
-OptionButton
 LineEdit
 Node3D
 MeshInstance3D
 Label3D
 RichTextLabel
 TextEdit
-CheckBox
 ProgressBar
 TextureRect
 RayCast3D
