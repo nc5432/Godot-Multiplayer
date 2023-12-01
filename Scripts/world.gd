@@ -22,7 +22,7 @@ var paused: bool = false
 var ingame: bool = false
 var chimkin
 var local_peer_id
-var vsync: bool = true
+var settings
 
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
 
@@ -30,6 +30,9 @@ func _unhandled_input(event):
 	#if (not is_multiplayer_authority()): return
 	if ingame and Input.is_action_just_pressed("quit"):
 		pause()
+
+func _ready():
+	loadSave()
 
 func _on_join_pressed():
 	baseMenu.hide()
@@ -116,7 +119,8 @@ func pause():
 
 func _on_cancel_pressed():
 	optionMenu.hide()
-	mainMenu.show()
+	baseMenu.show()
+	updateOptions()
 
 func playerDisconnect(peer_id):
 	mainMenu.show()
@@ -129,24 +133,78 @@ func _on_main_menu_pressed():
 	var player = get_node_or_null(str(local_peer_id))
 	enet_peer.close()
 
-func _on_v_sync_box_pressed():
-	if vsync:
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-	else:
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
-	vsync = !vsync
-
 func save():
 	var save_game = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
-	save_game.store_line(JSON.stringify({"vsync": vsync}))
+	save_game.store_line(JSON.stringify(settings))
+	save_game.close()
 
 func loadSave():
 	if not FileAccess.file_exists(SAVE_FILE):
 		initSave()
-	var save_game = FileAccess.open(SAVE_FILE, FileAccess.READ)
-	
+		var save_game = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
+		save_game.store_line(JSON.stringify(settings))
+		save_game.close()
+	else:
+		var save_game = FileAccess.open(SAVE_FILE, FileAccess.READ)
+		var json = JSON.new()
+		json.parse(save_game.get_line())
+		settings = json.get_data()
+		save_game.close()
+	if settings["vsync"]:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	updateOptions()
+
+func updateOptions():
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/FOV").value = settings["fov"]
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/Sensitivity").value = settings["sensitivity"]
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MasterVolume").value = settings["master_volume"]
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MusicVolume").value = settings["music_volume"]
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/SoundFXVolume").value = settings["soundFX_volume"]
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/VSyncBox").button_pressed = settings["vsync"]
 
 func initSave():
-	var save_game = FileAccess.open(SAVE_FILE, FileAccess.WRITE)
-	save_game.store_line(JSON.stringify({"vsync": true}))
+	settings = {"fov": 75,
+		"sensitivity": 75,
+		"master_volume": 100,
+		"music_volume": 100,
+		"soundFX_volume": 100,
+		"vsync": true}
+	updateOptions()
 
+func _on_apply_pressed():
+	settings = {
+		"fov": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/FOV").value,
+		"sensitivity": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/Sensitivity").value,
+		"master_volume": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MasterVolume").value,
+		"music_volume": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MusicVolume").value,
+		"soundFX_volume": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/SoundFXVolume").value,
+		"vsync": get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/VSyncBox").button_pressed
+	}
+	save()
+	if settings["vsync"]:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	baseMenu.show()
+	optionMenu.hide()
+
+func _on_options_pressed():
+	optionMenu.show()
+	baseMenu.hide()
+
+func _on_fov_value_changed(value):
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/FOVNum").text = str(value)
+
+func _on_sensitivity_value_changed(value):
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/SensitivityNum").text = str(value)
+
+func _on_master_volume_value_changed(value):
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MasterVolumeValue").text = str(value)
+
+func _on_music_volume_value_changed(value):
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/MusicVolumeNum").text = str(value)
+
+func _on_sound_fx_volume_value_changed(value):
+	get_node("CanvasLayer/MainMenu/MarginContainer/VBoxContainer/OptionMenu/SoundFXVolumeValue").text = str(value)
