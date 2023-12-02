@@ -14,7 +14,7 @@ signal pausing()
 @onready var healthbar = $CanvasLayer/HUD/HealthBar
 @onready var upnpEnabled = $CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/upnpCheck
 
-const SAVE_FILE: String = "saves/options.res"
+const SAVE_FILE: String = "user://options.res"
 const Player = preload("res://Prefabs/player.tscn")
 const PORT = 25565
 var enet_peer = ENetMultiplayerPeer.new()
@@ -22,8 +22,8 @@ var paused: bool = false
 var ingame: bool = false
 var chimkin
 var local_peer_id
-var settings
 
+@export var settings: Dictionary
 @export var spawnpoint: Vector3 = Vector3(0, 6.376, 0)
 
 func _unhandled_input(event):
@@ -166,10 +166,10 @@ func updateOptions():
 
 func initSave():
 	settings = {"fov": 75,
-		"sensitivity": 75,
-		"master_volume": 100,
-		"music_volume": 100,
-		"soundFX_volume": 100,
+		"sensitivity": 50,
+		"master_volume": 70,
+		"music_volume": 70,
+		"soundFX_volume": 70,
 		"vsync": true}
 	updateOptions()
 

@@ -42,6 +42,8 @@ func _ready():
 	makeHat()
 	listener.make_current()
 	world.pausing.connect(pause)
+	camera.fov = world.settings["fov"]
+	lookSensitivity = world.settings["sensitivity"] / 10000
 
 func updateUsername():
 	nametag.text = username
