@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701488440
+::res://::1701491923
 export_presets.cfg::TextFile::-1::1699984723::0::1::::<><>::
 icon.svg::CompressedTexture2D::8963615070695796116::1699485144::1699485149::1::::<><>::
 ::res://addons/::1699501524
@@ -310,17 +310,15 @@ lambert1_metallicRoughness.png::CompressedTexture2D::8931258458639185901::169966
 lambert1_normal.png::CompressedTexture2D::3998376482152544164::1699662585::1699662585::1::::<><>::
 ::res://Occlusion Data/::1699669336
 environment.occ::ArrayOccluder3D::2660494726846166203::1699668360::0::1::::<><>::
-::res://Prefabs/::1700184003
-player.tscn::PackedScene::4444783912067201683::1700184003::0::1::::<><>::res://Scripts/Player.gd<>uid://da1qh4xri24f2::::res://Models/kimber_1911/scene.gltf<>uid://d164amgdtaa5k::::res://Models/funny_rubber_chicken/chicken.tscn<>uid://bx0esoasfh733::::res://addons/kenney_particle_pack/star_06.png<>uid://cfwx1moklfkfj::::res://Sound Effects/weapon_gun_1911_A_41.ogg
-::res://Saves/::1701461604
-options.res::::-1::1701461604::0::1::::<><>::
-::res://Scenes/::1701461604
+::res://Prefabs/::1701490162
+player.tscn::PackedScene::4444783912067201683::1701490162::0::1::::<><>::res://Scripts/Player.gd<>uid://da1qh4xri24f2::::res://Models/kimber_1911/scene.gltf<>uid://d164amgdtaa5k::::res://Models/funny_rubber_chicken/chicken.tscn<>uid://bx0esoasfh733::::res://addons/kenney_particle_pack/star_06.png<>uid://cfwx1moklfkfj::::res://Sound Effects/weapon_gun_1911_A_41.ogg
+::res://Scenes/::1701490152
 environment.tscn::PackedScene::8256961957080777526::1699669972::0::1::::<><>::uid://ca0iv4endjdmn::::res://Models/environment.glb<>uid://ckhpjran4mily::::res://addons/kenney_prototype_textures/dark/texture_04.png<>uid://c4nnm6ptome8x::::res://addons/kenney_prototype_textures/red/texture_10.png<>uid://bd507vee6ic1p::::res://Occlusion Data/environment.occ
-world.tscn::PackedScene::1877808985457939721::1701461604::0::1::::<><>::res://Scripts/world.gd<>uid://dpvy7sm57pjn7::::res://Scenes/environment.tscn<>uid://dhytg0w8gqdob::::res://addons/kenney_particle_pack/circle_05.png
-::res://Scripts/::1701461604
+world.tscn::PackedScene::1877808985457939721::1701490152::0::1::::<><>::res://Scripts/world.gd<>uid://dpvy7sm57pjn7::::res://Scenes/environment.tscn<>uid://dhytg0w8gqdob::::res://addons/kenney_particle_pack/circle_05.png
+::res://Scripts/::1701489694
 chicken.gd::GDScript::-1::1699544273::0::1::::<>Node3D<>::
 HatHider.gd::GDScript::-1::1699664681::0::1::::<>Node3D<>::
-Player.gd::GDScript::-1::1700183755::0::1::::<>CharacterBody3D<>::
-world.gd::GDScript::-1::1701461604::0::1::::<>Node<>::
+Player.gd::GDScript::-1::1701489123::0::1::::<>CharacterBody3D<>::
+world.gd::GDScript::-1::1701489694::0::1::::<>Node<>::
 ::res://Sound Effects/::1699751713
 weapon_gun_1911_A_41.ogg::AudioStreamOggVorbis::5170645470017560819::1699751712::1699751713::1::::<><>::
