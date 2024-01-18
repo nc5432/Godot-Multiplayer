@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://10vifa1pd4gb"]
+[gd_scene load_steps=7 format=3 uid="uid://10vifa1pd4gb"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_iice2"]
 [ext_resource type="PackedScene" uid="uid://dpvy7sm57pjn7" path="res://Scenes/environment.tscn" id="1_jscbm"]
@@ -8,6 +8,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufa2v"]
 bg_color = Color(1, 0.0235294, 0.12549, 1)
+
+[sub_resource type="Environment" id="Environment_8h625"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.35
 
 [node name="World" type="Node"]
 script = ExtResource("1_iice2")
@@ -19,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.726647, -0.512797, 0.457191, 0, 0.665478, 0.746418, -0.687011, -0.542382, 0.483567, 0, 39.4589, 0)
 light_energy = 1.821
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -627,6 +633,9 @@ _spawnable_scenes = PackedStringArray("res://Prefabs/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8h625")
 
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/HostButton" to="." method="_on_host_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Hosting/Back" to="." method="_on_back_pressed_1"]

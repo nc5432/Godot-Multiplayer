@@ -176,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ruebo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105975, 1.46831, 0.0121291)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76622e-05, 1.46831, 0.0121291)
 
 [node name="gun" parent="Camera3D" instance=ExtResource("2_0x8c2")]
 transform = Transform3D(-0.3, -3.72707e-07, 6.5866e-07, 6.55671e-09, 0.259808, 0.15, -7.56769e-07, 0.15, -0.259808, 0.40064, -0.313696, -0.50908)

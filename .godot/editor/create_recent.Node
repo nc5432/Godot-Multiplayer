@@ -1,3 +1,4 @@
+WorldEnvironment
 Button
 CheckBox
 OptionButton
@@ -12,21 +13,3 @@ AudioStreamPlayer
 AudioStreamPlayer3D
 AudioListener3D
 OccluderInstance3D
-MultiMeshInstance3D
-LineEdit
-Node3D
-MeshInstance3D
-Label3D
-RichTextLabel
-TextEdit
-ProgressBar
-TextureRect
-RayCast3D
-MultiplayerSynchronizer
-MultiplayerSpawner
-GPUParticles3D
-AnimationPlayer
-DirectionalLight3D
-DirectionalLight2D
-Camera3D
-CollisionShape3D
